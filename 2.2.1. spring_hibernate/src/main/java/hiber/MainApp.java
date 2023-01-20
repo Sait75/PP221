@@ -18,20 +18,21 @@ public class MainApp {
 
 
 //-------------------СОЗДАЕМ ВЛАДЕЛЬЦЕВ И ИХ АВТО, добавляем в таблицы--------------------
-        User user1 = new User("User1", "Lastname1", "user1@mail.ru");
-        user1.setUserCar(new Car("car1", 111));
+        User user1 = new User("User1", "Lastname1", "user1@mail.ru"
+                ,new Car("car1", 1111));
+
+        User user2 = new User("User2", "Lastname2", "user2@mail.ru"
+                ,new Car("car2", 2222));
+
+        User user3 = new User("User3", "Lastname3", "user3@mail.ru"
+                ,new Car("car3", 3333));
+
+        User user4 = new User("User4", "Lastname4", "user4@mail.ru"
+                ,new Car("car2", 4444));
+
         userService.add(user1);
-
-        User user2 = new User("User2", "Lastname2", "user2@mail.ru");
-        user2.setUserCar(new Car("car2", 222));
         userService.add(user2);
-
-        User user3 = new User("User3", "Lastname3", "user3@mail.ru");
-        user3.setUserCar(new Car("car3", 333));
         userService.add(user3);
-
-        User user4 = new User("User4", "Lastname4", "user4@mail.ru");
-        user4.setUserCar(new Car("car4", 444));
         userService.add(user4);
 
 //--------------Получаем владельцев и их авто-------------------
@@ -46,7 +47,7 @@ public class MainApp {
             System.out.println();
         }
 //-----------Ищем владельца по модели авто--------------------
-        System.out.println(userService.findUserByCar("car3", 333));
+        System.out.println(userService.findUserByCar("car2", 2222));
 
         context.close();
     }
